@@ -6,6 +6,18 @@ const {hashPassword,hashCompare,createToken,decodeToken,validateToken,adminGaurd
 const { ObjectId } = require('mongodb');
 mongoose.connect(dbUrl)
 
+exports.handler= async (event,context) => {
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers':'Content-Type'
+  };
+  return{
+    statusCode:200,
+    headers,
+    body:JSON.stringify(data),
+  };
+};
+
 router.get('/all-food',validateToken,async(req, res)=>{
   try {
     let food = await foodModel.find()
