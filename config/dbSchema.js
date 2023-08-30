@@ -26,7 +26,6 @@ const foodSchema = new mongoose.Schema({
 
 const orderSchema = new mongoose.Schema({
     orderItems:{type:Array,default:[]},
-    userId:{type:String,required:true},
     deliveryAddress:{type:String,required:true},
     orderAmount:{type:Number,required:true},
     contact:{type:String,required:true},
